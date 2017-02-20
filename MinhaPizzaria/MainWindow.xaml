@@ -5,9 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MinhaPizzaria"
         mc:Ignorable="d"
-        Title="" Height="768" Width="1024">
-    <Grid>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="365,309,0,0" VerticalAlignment="Top" Width="75"/>
+        Title="" Height="768" Width="1024">    
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Arquivo">
+                <MenuItem x:Name="MenuItem_Arquivo_Impressora" Header="_Impressora">
+                    <MenuItem x:Name="MenuItem_Arquivo_Impressora_Configuracao" Header="_Configuração"/>                        
+                </MenuItem>
+                <MenuItem x:Name="MenuItem_Arquivo_Sair" Header="_Sair" Click="MenuItem_Arquivo_Sair_Click"/>                    
+            </MenuItem>
+            <MenuItem x:Name="MenuItem_Pedidos" Header="_Pedidos">
+                <MenuItem x:Name="MenuItem_Pedidos_Consultar" Header="_Consultar"/>
+                <MenuItem x:Name="MenuItem_Pedidos_Incluir_Editar" Header="_Incluir/Editar"/>
+                <MenuItem x:Name="MenuItem_Pedidos_Excluir" Header="_Excluir"/>
+            </MenuItem>
+            <MenuItem x:Name="MenuItem_Clientes" Header="_Clientes"/>
+            <MenuItem x:Name="MenuItem_Cardapio" Header="_Cardapio">
+                <MenuItem x:Name="MenuItem_Cardapio_Consultar" Header="_Consultar"/>
+                <MenuItem x:Name="MenuItem_Cardapio_Incluir_Editar" Header="_Incluir/Editar"/>
+                <MenuItem x:Name="MenuItem_Cardapio_Excluir" Header="_Excluir"/>
+            </MenuItem>
+            <MenuItem Header="_Usuarios">
+                <MenuItem x:Name="MenuItem_Usuarios_Consultar" Header="_Consultar"/>
+                <MenuItem x:Name="MenuItem_Usuarios_Incluir_Editar" Header="_Incluir/Editar"/>
+                <MenuItem x:Name="MenuItem_Usuarios_Excluir" Header="_Excluir"/>
+            </MenuItem>
+            <MenuItem x:Name="MenuItem_Sobre" Header="_Sobre"/>
+        </Menu>
 
-    </Grid>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="67" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="35" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+            <StatusBarItem>
+                <TextBlock Name="lblDiaAtual" />
+            </StatusBarItem>
+            <Separator Grid.Column="1" />
+            <StatusBarItem Grid.Column="2">
+                <TextBlock Name="lblPedidosNaoFinalizados" />
+            </StatusBarItem>
+            <Separator Grid.Column="3" />
+            <StatusBarItem Grid.Column="4">
+                <TextBlock Name="lblHoraAtual" />
+            </StatusBarItem>
+        </StatusBar>
+        <DockPanel>
+            
+        </DockPanel>       
+    </DockPanel>    
 </Window>
