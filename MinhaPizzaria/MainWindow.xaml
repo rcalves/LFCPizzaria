@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MinhaPizzaria"
         mc:Ignorable="d"
-        Title="" Height="768" Width="1024">    
+        Title="" Height="768" Width="1024">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_Arquivo">
                 <MenuItem x:Name="MenuItem_Arquivo_Impressora" Header="_Impressora">
-                    <MenuItem x:Name="MenuItem_Arquivo_Impressora_Configuracao" Header="_Configuração"/>                        
+                    <MenuItem x:Name="MenuItem_Arquivo_Impressora_Configuracao" Header="_Configuração"/>
                 </MenuItem>
-                <MenuItem x:Name="MenuItem_Arquivo_Sair" Header="_Sair" Click="MenuItem_Arquivo_Sair_Click"/>                    
+                <MenuItem x:Name="MenuItem_Arquivo_Sair" Header="_Sair" Click="MenuItem_Arquivo_Sair_Click"/>
             </MenuItem>
             <MenuItem x:Name="MenuItem_Pedidos" Header="_Pedidos">
                 <MenuItem x:Name="MenuItem_Pedidos_Consultar" Header="_Consultar"/>
@@ -60,7 +60,66 @@
             </StatusBarItem>
         </StatusBar>
         <DockPanel>
-            
-        </DockPanel>       
-    </DockPanel>    
+            <Border BorderBrush="Black" BorderThickness="1">
+                <ListView x:Name="listViewPedidos" DockPanel.Dock="Left" Width="651" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListView.View>
+                        <GridView AllowsColumnReorder="True" ColumnHeaderToolTip="Ultimos Pedidos">
+                            <GridView.ColumnHeaderContainerStyle>
+                                <Style TargetType="{x:Type GridViewColumnHeader}">
+                                    <Setter Property="IsEnabled" Value="False"/>
+                                </Style>
+                            </GridView.ColumnHeaderContainerStyle>
+                            <GridViewColumn Header="Nº Pedido" Width="100"/>
+                            <GridViewColumn Header="Cliente" Width=" 150"/>
+                            <GridViewColumn Header="Pedido" Width=" 100"/>
+                            <GridViewColumn Header="Status do Pedido" Width=" 100"/>
+                            <GridViewColumn Header="Tempo Decorrido" Width=" 100"/>
+                            <GridViewColumn Header="Atualizar Status" Width=" 100"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0 1 1 1">
+                <Grid DockPanel.Dock="Right" Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+                    <Button x:Name="buttonIniciarPedido" Height="49" VerticalAlignment="Top" Margin="10,30,190,0">
+                        <DockPanel>
+                            <Image Source="img/novo_pedido.png" HorizontalAlignment="Left" DockPanel.Dock="Left" Width="50" Height="40"/>
+                            <TextBlock Text="Iniciar Pedido" DockPanel.Dock="Right" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100"/>
+                        </DockPanel>
+                    </Button>
+                    <Button x:Name="buttonConsultarCliente" Height="49" VerticalAlignment="Top" Margin="190,30,10,0">
+                        <DockPanel>
+                            <Image Source="img/clientes.png" HorizontalAlignment="Left" DockPanel.Dock="Left" Width="50" Height="40"/>
+                            <TextBlock Text="Clientes" DockPanel.Dock="Right" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100"/>
+                        </DockPanel>
+                    </Button>
+                    <Button x:Name="buttonCardapio" Height="49" VerticalAlignment="Top" Margin="10,115,190,0">
+                        <DockPanel>
+                            <Image Source="img/cardapio.png" HorizontalAlignment="Left" DockPanel.Dock="Left" Width="50" Height="40"/>
+                            <TextBlock Text="Cardapio" DockPanel.Dock="Right" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100"/>
+                        </DockPanel>
+                    </Button>
+                    <Button x:Name="buttonReimprimirPedido" Height="48" VerticalAlignment="Top" Margin="190,116,10,0">
+                        <DockPanel>
+                            <Image Source="img/print.png" HorizontalAlignment="Left" DockPanel.Dock="Left" Width="50" Height="40"/>
+                            <TextBlock Text="Reimprimir Pedido" DockPanel.Dock="Right" VerticalAlignment="Center" HorizontalAlignment="Center" Width="100"/>
+                        </DockPanel>
+                    </Button>
+                    <Button x:Name="buttonOfertaAnterior" HorizontalAlignment="Left" Margin="130,232,0,0" VerticalAlignment="Top" Width="25" ToolTip="Anterior">
+                        <DockPanel>
+                            <Image Source="img/previous.png" HorizontalAlignment="Left" DockPanel.Dock="Left" Width="25" Height="20"/>
+                        </DockPanel>
+                    </Button>
+                    <Button x:Name="buttonOfertaProxima" HorizontalAlignment="Left" Margin="210,232,0,0" VerticalAlignment="Top" Width="25" ToolTip="Proxima">
+                        <DockPanel>
+                            <Image Source="img/next.png" HorizontalAlignment="Left" DockPanel.Dock="Left" Width="25" Height="20"/>
+                        </DockPanel>
+                    </Button>
+                    <Image x:Name="imageOfertas" HorizontalAlignment="Left" Height="392" Margin="9,259,0,0" VerticalAlignment="Top" Width="342" RenderTransformOrigin="0.496,0.545" Source="img/LFC_cartao_deitado.jpg" Stretch="Fill"/>                    
+                    <Label x:Name="labelOfertas" Content="Ofertas" HorizontalAlignment="Left" Height="39" Margin="143,190,0,0" VerticalAlignment="Top" Width="77" FontSize="18.667" FontWeight="Bold" FontStyle="Italic"/>
+                    <Label x:Name="labelDireitos" Content="" HorizontalAlignment="Left" Margin="10,656,0,0" VerticalAlignment="Top" Height="25" Width="341"/>
+                </Grid>
+            </Border>
+        </DockPanel>
+    </DockPanel>
 </Window>

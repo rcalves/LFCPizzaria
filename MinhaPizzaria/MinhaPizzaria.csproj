@@ -95,6 +95,42 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\LFC_cartao_deitado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\cardapio.png" />
+    <Resource Include="img\clientes.png" />
+    <Resource Include="img\pedidos.png" />
+    <Resource Include="img\sair.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\cancelar_pedido.png" />
+    <Resource Include="img\editar_pedido.png" />
+    <Resource Include="img\importante.png" />
+    <Resource Include="img\novo_pedido.png" />
+    <Resource Include="img\password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\buscar.png" />
+    <Resource Include="img\cancelar.png" />
+    <Resource Include="img\editar.png" />
+    <Resource Include="img\excluir.png" />
+    <Resource Include="img\incluir.png" />
+    <Resource Include="img\ingredientes.png" />
+    <Resource Include="img\menos.png" />
+    <Resource Include="img\ok.png" />
+    <Resource Include="img\salvar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\next.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\previous.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -26,6 +26,7 @@ namespace MinhaPizzaria
         {
             InitializeComponent();
             Title = "LFC SCI - Minha Pizzaria - versão: " + Assembly.GetExecutingAssembly().GetName().Version;
+            this.labelDireitos.Content = "© Copyright " + DateTime.Now.ToString("yyyy") + " LFC Software, Celulares e Informatica";
 
             Thread thAtualizarHora = new Thread(() => {
                 while (true)
